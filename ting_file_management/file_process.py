@@ -1,22 +1,4 @@
-# def txt_importer(path_file):
-#     if not path_file.endswith(".txt"):
-#         sys.stderr.write("Formato inválido")
-#     # if os.path.exists(path_file):
-#     #     sys.stderr.write(f"Arquivo {path_file} não encontrado")
-#     try:
-#         with open(path_file, "r") as file:
-#             lines = file.read().splitlines()
-#         return lines
-#     except FileNotFoundError:
-#         print(sys.stderr.write(f"Arquivo {path_file} não encontrado\n"))
-
-
-# vou receber um objeto instanciado de queue e um caminho
-
-# teste = Queue()
-# teste.enqueue(2)
-# teste.enqueue(4)
-# teste.queue == [2, 4]
+import sys
 
 from ting_file_management.file_management import txt_importer
 
@@ -43,4 +25,8 @@ def remove(instance):
 
 
 def file_metadata(instance, position):
-    """Aqui irá sua implementação"""
+    try:
+        my_data = instance.search(position)
+        print(my_data)
+    except IndexError:
+        sys.stderr.write("Posição inválida")

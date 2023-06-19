@@ -14,8 +14,8 @@ class Queue(AbstractQueue):
         # self.len += 1
 
     def dequeue(self):
-        if len(self.queue) == 0:
-            return None
+        # if len(self.queue) == 0:
+        #     return None
         # self.len -= 1
         return self.queue.pop(0)
 
@@ -23,3 +23,7 @@ class Queue(AbstractQueue):
         if index >= len(self.queue) or index < 0:
             raise IndexError("Índice Inválido ou Inexistente")
         return self.queue[index]
+
+
+# teste = Queue()
+# teste.
